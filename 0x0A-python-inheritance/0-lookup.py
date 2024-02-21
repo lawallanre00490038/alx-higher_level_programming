@@ -7,4 +7,4 @@ def lookup(obj):
 	"""
 		This function prints all methods and list all attributes
 	"""
-	print(dir)
+	return dir(obj)
