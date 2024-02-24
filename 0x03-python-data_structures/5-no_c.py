@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+
 def no_c(my_string):
-	newString = ""
-	for s in newString:
-		if s in ["c", "C"]:
-			continue
-		newString.append(s)
-	return ("{:s}".format(newString))
+    updated_str = ''
+    for i in my_string:
+        if i != 'c' and i != 'C':
+            updated_str += i
+    return (updated_str)
