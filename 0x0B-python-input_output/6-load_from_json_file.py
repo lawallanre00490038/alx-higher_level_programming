@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-
-"""	
-Write a function that creates an Object from a “JSON file”:
-
-Prototype: def load_from_json_file(filename): 
-You must use the with statement
-You don’t need to manage exceptions if the JSON string doesn’t represent an object.
-You don’t need to manage file permissions / exceptions.
-"""
-
+"""Defines a JSON file-reading function."""
 import json
 
+
 def load_from_json_file(filename):
-    """Creates an Object from a “JSON file”"""
-    with open(filename, 'r', encoding='utf-8') as file:
-        return json.load(file)
+    """Create a Python object from a JSON file."""
+    with open(filename) as f:
+        return json.load(f)
