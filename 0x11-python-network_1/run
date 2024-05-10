@@ -1,0 +1,8 @@
+#!/bin/bash
+
+url="https://intranet.hbtn.io/status"
+
+echo "Body response:"
+echo -e "\t- type: $(curl -s -I $url | grep "Content-Type" | cut -d' ' -f2-)"
+echo -e "\t- content: $(curl -s $url)"
+echo -e "\t- utf8 content: $(curl -s $url | iconv -f ISO-8859-1 -t UTF-8)"
