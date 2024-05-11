@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 """
-Please test your script in the sandbox provided
+Sends a request to the URL and displays the body of the response
+(decoded in utf-8).
 """
 
-import urllib.parse
-import urllib.request
-import sys
 
-if __name__ == "__main__":
-    url = sys.argv[1]
-    req = urllib.request.Request(url)
+if __name__ == '__main__':
+    import sys
+    from urllib import request, error
 
-    with urllib.request.urlopen(req) as response:
-        print(response.read().decode('utf-8'))
+    argv = sys.argv
+    url = argv[1]
+    try:
+        with request.urlopen(url) as response:
+            print(response.read().decode('utf-8'))
+    except error.HTTPError as err:
+        print("Error code: {}".format(err.status))
