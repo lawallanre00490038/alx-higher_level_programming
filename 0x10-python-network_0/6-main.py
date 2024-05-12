@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """ Test function find_peak """
+# import find_peak function from the file 6-peak.py in the parent directory. two dots before the slash means parent directory
+from os import sys
+sys.path.append('..')
 find_peak = __import__('6-peak').find_peak
 
 print(find_peak([1, 2, 4, 6, 3]))
